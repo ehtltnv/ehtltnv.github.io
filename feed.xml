@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing Note</title>
+    <description>Simple, New, Tech AND Trip
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 14 Sep 2020 11:41:14 +0000</pubDate>
+    <lastBuildDate>Mon, 14 Sep 2020 11:41:14 +0000</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Jekyll setting</title>
+        <description>&lt;p&gt;첫 게시물과 Jekyll.&lt;/p&gt; &lt;p&gt;이전부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Markdown&lt;/code&gt;에 대해서 조금조금씩 공부했었고, 기술 블로그를 하나 만들어서 공유하면 좋겠다라는 생각에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;를 사용해서 시작하게 됨. 역시나 제대로 하는게 없어서...</description>
+        <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/jekyll/2020/09/14/Jekyll-setting.html</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/2020/09/14/Jekyll-setting.html</guid>
+        
+        <category>Jekyll</category>
+        
+        <category>git</category>
+        
+        <category>docker</category>
+        
+        <category>codeserver</category>
+        
+        
+        <category>Jekyll</category>
+        
+      </item>
+    
+  </channel>
+</rss>
