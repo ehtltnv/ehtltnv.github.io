@@ -284,7 +284,8 @@ $ yum install -y docker-ce
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vi /lib/systemd/system/docker.service
-14 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --exec-opt native.cgroupdriver=systemd
+14 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock \
+  --exec-opt native.cgroupdriver=systemd
 </code></pre></div></div>
 
 <h2 id="23-docker-실행">2.3. Docker 실행</h2>
@@ -341,9 +342,12 @@ $ kubeadm config images pull
 kubeadm join ~ 부분 복사
 이후에 Node에 설정할 때 사용 
 --&gt;
-$ kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.10.89
+$ kubeadm init --pod-network-cidr=10.244.0.0/16 \
+--apiserver-advertise-address=192.168.10.89
 ...
-kubeadm join 192.168.10.89:6443 --token pv0ekh.odw4qk6lqnz2q9ss --discovery-token-ca-cert-hash sha256:225a464d125c94fa9543cf78e27c0c13ca68ab80328b7c1dfae9c707777265a9 
+kubeadm join 192.168.10.89:6443 --token pv0ekh.odw4qk6lqnz2q9ss \
+--discovery-token-ca-cert-hash \
+sha256:225a464d125c94fa9543cf78e27c0c13ca68ab80328b7c1dfae9c707777265a9 
 ...
 
 &lt;!-- kubernetes 설정 --&gt;
@@ -359,9 +363,11 @@ $ kubectl get pods --all-namespaces
 $ kubeadm reset
 </code></pre></div></div>
 
-<h2 id="33-node-섷정">3.3. Node 섷정</h2>
+<h2 id="33-node-연결">3.3. Node 연결</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubeadm join 192.168.10.89:6443 --token pv0ekh.odw4qk6lqnz2q9ss --discovery-token-ca-cert-hash sha256:225a464d125c94fa9543cf78e27c0c13ca68ab80328b7c1dfae9c707777265a9 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubeadm join 192.168.10.89:6443 --token pv0ekh.odw4qk6lqnz2q9ss \
+--discovery-token-ca-cert-hash \
+sha256:225a464d125c94fa9543cf78e27c0c13ca68ab80328b7c1dfae9c707777265a9 
 </code></pre></div></div>
 
 <h2 id="34-연결-확인">3.4. 연결 확인</h2>
@@ -370,7 +376,7 @@ $ kubeadm reset
   <li>Master 에서 조회</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- 오류가 발생하면 'export KUBECONFIG=/etc/kubernetes/admin.conf' 실행 후 다시 실행--&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- 오류가 발생하면 'export KUBECONFIG=/etc/kubernetes/admin.conf' 실행 후 다시 실행 --&gt;
 $ kubectl get nodes
 NAME     STATUS     ROLES    AGE     VERSION
 k8s-m    Ready      master   3h14m   v1.19.1
@@ -397,7 +403,9 @@ pv0ekh.odw4qk6lqnz2q9ss   20h         2020-09-17T10:36:51+09:00   authentication
 $ kubeadm token create
 f0y6yi.sg2aw57af35nz0ek
 
-$ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2&gt;/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+$ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | \
+openssl rsa -pubin -outform der 2&gt;/dev/null | \
+openssl dgst -sha256 -hex | sed 's/^.* //'
 225a464d125c94fa9543cf78e27c0c13ca68ab80328b7c1dfae9c707777265a9
 </code></pre></div></div>
 
