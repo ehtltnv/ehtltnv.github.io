@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kubernetes setting</title>
+  <meta name="description" content="Kubernetes 환경 구축 테스트">
+  
+  <meta name="author" content="ehtltnv">
+  <meta name="copyright" content="&copy; ehtltnv 2020">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Kubernetes 환경 구축 테스트" />
+  <meta property="og:url" content="http://0.0.0.0:4000/docker/2020/09/16/Kubernetes-setting.html">
+  <meta property="og:site_name" content="Testing Note" />
+  <meta property="og:title" content="Kubernetes setting" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kubernetes setting">
+  <meta name="twitter:description" content="Kubernetes 환경 구축 테스트">
+  <meta name="twitter:image" content="http://0.0.0.0:4000/assets/logo.png">
+  <meta name="twitter:url" content="http://0.0.0.0:4000/docker/2020/09/16/Kubernetes-setting.html">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/docker/2020/09/16/Kubernetes-setting.html">
+	<link rel="alternate" type="application/rss+xml" title="Testing Note" href="http://0.0.0.0:4000/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <h2>Testing Note</h2>
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Kubernetes setting</h1>
+      <p class="info">by <strong>ehtltnv</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">September 16, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/Docker">Docker</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><strong>Kubernetes</strong> 환경 구축 테스트</p>
+
+<p>OS는 <code class="language-plaintext highlighter-rouge">CentOS 7</code>에 구성은 <code class="language-plaintext highlighter-rouge">1 Master</code>와 <code class="language-plaintext highlighter-rouge">2 Node</code>로 구성</p>
+
+<p>Master는 4 Core / 8 RAM, Node는 각각 2 Core / 4 RAM</p>
+
+<h1 id="1-기본-설정">1. 기본 설정</h1>
+
+<h2 id="11-hostname-설정">1.1. hostname 설정</h2>
+
+<ul>
+  <li>각 서버는 서로 다른 hostname을 가지고 있어야함</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Master -- &gt; 
+$ hostnamectl set-hostname k8s-m 
+
+&lt;!-- Node 1 -- &gt; 
+$ hostnamectl set-hostname k8s-n1 
+
+&lt;!-- Node 2 -- &gt; 
+$ hostnamectl set-hostname k8s-n2 
+</code></pre></div></div>
+
+<h2 id="12-uuid--mac-address-확인">1.2. uuid / MAC Address 확인</h2>
+
+<ul>
+  <li>각 서버는 서로 다른 uuid와 MAC Address를 가지고 있어햐함</li>
+  <li>일반적으로 겹칠 가능성은 희박하나 혹시 모를 상황에 대비하여 확인</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- uuid --&gt; 
+$ cat /sys/class/dmi/id/product_uuid  
+
+&lt;!-- MAC Address --&gt; 
+$ ip a 
+
+</code></pre></div></div>
+
+<h2 id="13-selinux-해제">1.3. SELinux 해제</h2>
+
+<ul>
+  <li>해제(disable) 또는 permissive으로 설정</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vi /etc/sysconfig/selinux
+7 SELINUX=disabled
+</code></pre></div></div>
+
+<h2 id="14-방화벽-해제">1.4. 방화벽 해제</h2>
+
+<ul>
+  <li>포트를 파악해서 일일이 여는 방법도 있지만 .. 일단은 해제</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ systemctl stop firewalld &amp;&amp; systemctl disable firewalld
+</code></pre></div></div>
+
+<h2 id="15-iptables-설정-추가">1.5. iptables 설정 추가</h2>
+
+<ul>
+  <li>bridge 네트워크가 iptables를 우회하지 않도록 설정</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+$ sysctl --system
+</code></pre></div></div>
+
+<h2 id="16-host-맵핑">1.6. host 맵핑</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vi /etc/hosts
+...
+192.168.10.89   k8s-m
+192.168.10.90   k8s-n1
+192.168.10.91   k8s-n2
+</code></pre></div></div>
+
+<h2 id="17-swap-비활성화">1.7. SWAP 비활성화</h2>
+
+<ul>
+  <li>swap 메모리를 비활성화해야 오류가 발생하지 않음</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ swapoff -a
+
+&lt;!-- 주석 처리 --&gt;
+$ vi /etc/fstab 
+13 # /dev/mapper/centos-swap swap                    swap    defaults        0 0
+</code></pre></div></div>
+
+<h2 id="18-재시작">1.8. 재시작</h2>
+
+<ul>
+  <li>1.1. ~ 1.7. 까지 작업을 모든 서버(Master + Node1, 2)에 적용 후 재시작</li>
+</ul>
+
+<hr />
+
+<h1 id="2-docker-설정">2. Docker 설정</h1>
+
+<ul>
+  <li>Master / Node 모두 설정</li>
+</ul>
+
+<h2 id="21-docker-설치">2.1. Docker 설치</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ yum install -y yum-utils device-mapper-persistent-data lvm2
+$ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+$ yum install -y docker-ce
+</code></pre></div></div>
+
+<h2 id="22-docker-cgroup-driver-변경">2.2. Docker cgroup driver 변경</h2>
+
+<ul>
+  <li>최신 버전의 Docker와 Kubernetes를 사용할 경우 드라이버를 systemd로 설정하지 않으면 Master/Node가 연결 안됨</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vi /lib/systemd/system/docker.service
+14 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --exec-opt native.cgroupdriver=systemd
+</code></pre></div></div>
+
+<h2 id="23-docker-실행">2.3. Docker 실행</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- systemctl enable docker &amp;&amp; systemctl start docker --&gt; 
+$ systemctl enable --now docker 
+
+&lt;!-- 실행 확인 --&gt; 
+$ docker version 
+
+&lt;!-- cgroup driver 확인 중요 !!--&gt;
+$ docker info | grep -i cgroup 
+ Cgroup Driver: systemd 
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="3-kubernetes-설정">3. Kubernetes 설정</h1>
+
+<h2 id="31-kubernetes-설치">3.1. Kubernetes 설치</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Repository 추가 --&gt;
+$ cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+
+$ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+
+&lt;!-- 여기서는 실행 안되는게 정상 !! --&gt;
+$ systemctl enable --now kubelet
+</code></pre></div></div>
+
+<ul>
+  <li>현 시점에서 kubelet의 서비스 상태는 fail이 맞음<del>(아무도 말을 안해줘서 오류인줄 ..)</del></li>
+  <li>초기화 후에 정상 동작하므로 이후 프로세스 진행</li>
+</ul>
+
+<h2 id="32-master-설정">3.2. Master 설정</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- kubernetes 설정을 위한 이미지 다운로드. 미리 안해도 kubeadm init 때 다운로드함 --&gt;
+$ kubeadm config images pull
+
+&lt;!-- 
+설정 초기화 
+--pod-network-cidr : 10.244.0.0/16(Flannel)
+--apiserver-advertise-address : Master IP
+
+kubeadm join ~ 부분 복사
+이후에 Node에 설정할 때 사용 
+--&gt;
+$ kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.10.89
+...
+kubeadm join 192.168.10.89:6443 --token pv0ekh.odw4qk6lqnz2q9ss --discovery-token-ca-cert-hash sha256:225a464d125c94fa9543cf78e27c0c13ca68ab80328b7c1dfae9c707777265a9 
+...
+
+&lt;!-- kubernetes 설정 --&gt;
+$ export KUBECONFIG=/etc/kubernetes/admin.conf
+
+&lt;!-- kubernetes network 플러그인 추가 --&gt;
+$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+&lt;!-- cluster 초기 pod 확인 --&gt;
+$ kubectl get pods --all-namespaces
+
+&lt;!-- 설정을 잘못했을 경우 초기화 --&gt;
+$ kubeadm reset
+</code></pre></div></div>
+
+<h2 id="33-node-섷정">3.3. Node 섷정</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ kubeadm join 192.168.10.89:6443 --token pv0ekh.odw4qk6lqnz2q9ss --discovery-token-ca-cert-hash sha256:225a464d125c94fa9543cf78e27c0c13ca68ab80328b7c1dfae9c707777265a9 
+</code></pre></div></div>
+
+<h2 id="34-연결-확인">3.4. 연결 확인</h2>
+
+<ul>
+  <li>Master 에서 조회</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- 오류가 발생하면 'export KUBECONFIG=/etc/kubernetes/admin.conf' 실행 후 다시 실행--&gt;
+$ kubectl get nodes
+NAME     STATUS     ROLES    AGE     VERSION
+k8s-m    Ready      master   3h14m   v1.19.1
+k8s-n1   Ready      &lt;none&gt;   3h9m    v1.19.1
+k8s-n2   Ready      &lt;none&gt;   3h7m    v1.19.1
+</code></pre></div></div>
+
+<ul>
+  <li>STATUS가 Ready로 바뀌려면 시간이 좀 걸림</li>
+</ul>
+
+<h2 id="35-master-token-조회-및-생성">3.5. Master Token 조회 및 생성</h2>
+
+<ul>
+  <li>최초 init할 때 값을 잃어버렸을 경우 사용</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- EXPIRES 기간이 유효한지 확인 --&gt;
+$ kubeadm token list
+TOKEN                     TTL         EXPIRES                     USAGES                   DESCRIPTION                                                EXTRA GROUPS
+pv0ekh.odw4qk6lqnz2q9ss   20h         2020-09-17T10:36:51+09:00   authentication,signing   The default bootstrap token generated by 'kubeadm init'.   system:bootstrappers:kubeadm:default-node-token
+
+&lt;!-- 토큰이 만료 되었을 경우 새로 생성 --&gt;
+$ kubeadm token create
+f0y6yi.sg2aw57af35nz0ek
+
+$ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2&gt;/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+225a464d125c94fa9543cf78e27c0c13ca68ab80328b7c1dfae9c707777265a9
+</code></pre></div></div>
+
+<h1 id="정리">정리</h1>
+<ul>
+  <li>초기 설정만 정의</li>
+  <li>Volumn 및 서비스 형태 검토 필요</li>
+  <li>이제 Docker랑 잘 연결만 하면 ..</li>
+</ul>
+
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/docker">docker</a>,&nbsp;<a href="/tag/kubernetes">kubernetes</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Testing Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+	<li class="nav-link"><a href="/typography/">Typography</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:ehtltnv@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">ehtltnv@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Simple, New, Tech AND Trip
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
