@@ -4,18 +4,34 @@
     <title>Testing Note</title>
     <description>Simple, New, Tech AND Trip
 </description>
-    <link>http://0.0.0.0:4000/</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Sep 2020 11:20:18 +0000</pubDate>
-    <lastBuildDate>Wed, 16 Sep 2020 11:20:18 +0000</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 27 Sep 2020 12:17:12 +0000</pubDate>
+    <lastBuildDate>Sun, 27 Sep 2020 12:17:12 +0000</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>GeoServer Clustering</title>
+        <description>&lt;p&gt;&lt;strong&gt;GeoServer&lt;/strong&gt; Clustering 구축&lt;/p&gt; &lt;p&gt;OS는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CentOS 7&lt;/code&gt;를 사용&lt;/p&gt; &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GeoServer&lt;/code&gt;는 Multi Primary로 3개로 구성하고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ActiveMQ&lt;/code&gt;는 2개로 구성&lt;/p&gt; &lt;h1 id=&quot;1-activemq-설정&quot;&gt;1. ActiveMQ 설정&lt;/h1&gt; &lt;h2 id=&quot;11-기본-구성&quot;&gt;1.1. 기본 구성&lt;/h2&gt; &lt;ul&gt;...</description>
+        <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+        <link>/geoserver/2020/09/27/GeoServer-Clustering.html</link>
+        <guid isPermaLink="true">/geoserver/2020/09/27/GeoServer-Clustering.html</guid>
+        
+        <category>geoserver</category>
+        
+        <category>docker</category>
+        
+        
+        <category>GeoServer</category>
+        
+      </item>
     
       <item>
         <title>Kubernetes setting</title>
         <description>&lt;p&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt; 환경 구축 테스트&lt;/p&gt; &lt;p&gt;OS는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CentOS 7&lt;/code&gt;에 구성은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1 Master&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2 Node&lt;/code&gt;로 구성&lt;/p&gt; &lt;p&gt;Master는 4 Core / 8 RAM, Node는 각각 2 Core /...</description>
         <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/docker/2020/09/16/Kubernetes-setting.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/docker/2020/09/16/Kubernetes-setting.html</guid>
+        <link>/docker/2020/09/16/Kubernetes-setting.html</link>
+        <guid isPermaLink="true">/docker/2020/09/16/Kubernetes-setting.html</guid>
         
         <category>docker</category>
         
@@ -30,8 +46,8 @@
         <title>Jekyll setting</title>
         <description>&lt;p&gt;첫 게시물과 Jekyll.&lt;/p&gt; &lt;p&gt;이전부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Markdown&lt;/code&gt;에 대해서 조금조금씩 공부했었고, 기술 블로그를 하나 만들어서 공유하면 좋겠다라는 생각에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;를 사용해서 시작하게 됨. 역시나 제대로 하는게 없어서...</description>
         <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/etc/2020/09/14/Jekyll-setting.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/etc/2020/09/14/Jekyll-setting.html</guid>
+        <link>/etc/2020/09/14/Jekyll-setting.html</link>
+        <guid isPermaLink="true">/etc/2020/09/14/Jekyll-setting.html</guid>
         
         <category>Jekyll</category>
         
